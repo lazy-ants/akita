@@ -26,9 +26,12 @@ export class TodosQuery extends QueryEntity<State, Todo> {
 
   constructor(protected store: TodosStore) {
     super(store);
+    console.log('Query => Query is connected to store');
   }
 
   private getVisibleTodos(filter, todos): Todo[] {
+    console.log('Query => Fires a subscription getVisibleTodos');
+
     switch (filter) {
       case VISIBILITY_FILTER.SHOW_COMPLETED:
         return todos.filter(t => t.completed);

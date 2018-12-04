@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 import { VISIBILITY_FILTER } from '../filter/filter.model';
 
 export interface State extends EntityState<Todo> {
-  ui: {
-    filter: VISIBILITY_FILTER
-  };
+  ui: { filter: VISIBILITY_FILTER };
 }
 
 const initialState = {
@@ -21,5 +19,6 @@ const initialState = {
 export class TodosStore extends EntityStore<State, Todo> {
   constructor() {
     super(initialState);
+    console.log('Store => Store created with name: todo-list');
   }
 }
